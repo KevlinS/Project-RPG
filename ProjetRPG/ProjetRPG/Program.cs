@@ -12,8 +12,9 @@ namespace ProjetRPG
         {
             // Github
             // loic.janin@ynov.com
-            new Menu();
+            Console.WriteLine("UPDATE GITHUB");
 
+            new Menu();
             Console.ReadLine();
         }
     }
