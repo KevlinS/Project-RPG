@@ -10,11 +10,10 @@ namespace ProjetRPG
     {
         static void Main(string[] args)
         {
-            // Github
-            // loic.janin@ynov.com
-            Console.WriteLine("UPDATE GITHUB");
-
-            new Menu();
+            Menu.PrintWelcomeText();
+            Menu.PrintMenu();
+            Menu.ChoiceMenu();
+            
             Console.ReadLine();
         }
     }
