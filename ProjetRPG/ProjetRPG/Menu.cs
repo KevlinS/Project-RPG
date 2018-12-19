@@ -9,11 +9,6 @@ namespace ProjetRPG
     class Menu
     {
 
-        public Menu()
-        {
-            
-        }
-
         public static void PrintWelcomeText()
         {
             Console.ForegroundColor = ConsoleColor.Red;

@@ -11,12 +11,6 @@ namespace ProjetRPG
         static Player p = new Player(100, 7500);
         static Monster m = new Monster(500, 500, 550, 550, 550, 2500);
 
-        public Game()
-        {
-            
-
-        }
-
         public static void StartNewGame()
         {
             string namePlayer = Player.GetNamePlayer();
