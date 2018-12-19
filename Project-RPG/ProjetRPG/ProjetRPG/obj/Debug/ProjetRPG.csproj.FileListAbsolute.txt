@@ -1,0 +1,14 @@
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.csprojAssemblyReference.cache
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.csproj.CoreCompileInputs.cache
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.exe.config
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.exe
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.pdb
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.exe
+C:\Users\kevlin\Desktop\Cours Ingésup\B2\C#\Cours Ingesup C#\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.pdb
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.csprojAssemblyReference.cache
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.csproj.CoreCompileInputs.cache
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.exe
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\obj\Debug\ProjetRPG.pdb
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.exe.config
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.exe
+C:\Users\abdelhak\Documents\GitHub\Project-RPG\ProjetRPG\ProjetRPG\bin\Debug\ProjetRPG.pdb
