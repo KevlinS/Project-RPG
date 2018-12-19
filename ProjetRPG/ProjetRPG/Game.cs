@@ -8,8 +8,8 @@ namespace ProjetRPG
 {
     class Game 
     {
-        static Player p = new Player(100, 5000);
-        static Monster m = new Monster(500, 500, 550, 550, 550);
+        static Player p = new Player(100, 7500);
+        static Monster m = new Monster(500, 500, 550, 550, 550, 2500);
 
         public Game()
         {
@@ -40,6 +40,7 @@ to get your fill of zombie fighting action." + "\n");
             {
                 case 1:
                     Console.WriteLine();
+                    Console.WriteLine("===== DON'T FORGET TO HEAL AND BE CAREFUL WHEN USING YOUR GOLD. IF YOU C'ANT BUY ANYTHING, YOU C'ANT SURVIVE =====");
                     PrintStatusZombie1();
                     PrintStatusPlayer();
                     PrintZombie1Coming();
@@ -52,6 +53,8 @@ to get your fill of zombie fighting action." + "\n");
                     FirstFloorMissionCombat1_4();
                     PrintZombie5Coming();
                     FirstFloorMissionCombat1_5();
+                    PrintZombieBossComing();
+                    FirstFloorMissionCombatBoss();
 
 
 
@@ -78,6 +81,10 @@ to get your fill of zombie fighting action." + "\n");
             return p.Money -= 1000;
         }
 
+        public static int BuySniper()
+        {
+            return p.Money -= 1750;
+        }
 
 
         public static int GetHealPlayer()
@@ -131,6 +138,13 @@ to get your fill of zombie fighting action." + "\n");
             Console.WriteLine("FIFTH ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
         }
 
+        public static void PrintZombieBossComing()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("===== ZOMBIE BOSS IS COMING!!! =====");
+        }
+
         public static void PrintStatusPlayer()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -154,10 +168,12 @@ to get your fill of zombie fighting action." + "\n");
 
         public static void PrintStatusZombie1()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if(m.HPzombie1 <= 0)
             {
+                p.Money += 2000;
                 Console.WriteLine("FIRST ZOMBIE HAS GONE");
+                Console.WriteLine("YOU RECEIVE 2000 GOLD");
             }
             else
             {
@@ -167,10 +183,12 @@ to get your fill of zombie fighting action." + "\n");
 
         public static void PrintStatusZombie1_2()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (m.HPzombie1_2 <= 0)
             {
+                p.Money += 2000;
                 Console.WriteLine("SECOND ZOMBIE HAS GONE");
+                Console.WriteLine("YOU RECEIVE 2000 GOLD");
             }
             else
             {
@@ -180,9 +198,10 @@ to get your fill of zombie fighting action." + "\n");
 
         public static void PrintStatusZombie1_3()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (m.HPzombie1_3 <= 0)
             {
+                p.Money += 2000;
                 Console.WriteLine("THIRD ZOMBIE HAS GONE");
             }
             else
@@ -193,9 +212,10 @@ to get your fill of zombie fighting action." + "\n");
 
         public static void PrintStatusZombie1_4()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (m.HPzombie1_4 <= 0)
             {
+                p.Money += 2000;
                 Console.WriteLine("FOURTH ZOMBIE HAS GONE");
             }
             else
@@ -206,14 +226,30 @@ to get your fill of zombie fighting action." + "\n");
 
         public static void PrintStatusZombie1_5()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (m.HPzombie1_5 <= 0)
             {
+                p.Money += 2000;
                 Console.WriteLine("FIFTH ZOMBIE HAS GONE");
             }
             else
             {
                 Console.WriteLine("HP ZOMBIE:" + m.HPzombie1_5);
+            }
+        }
+
+        public static void PrintStatusZombieBoss()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            if (m.HPzombieBoss <= 0)
+            {
+                p.Money += 10000;
+                Console.WriteLine("===== ALL ZOMBIES DEAD =====");
+                Console.WriteLine("===== MISSION SUCCESS - STAGE 1 COMPLETED =====");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombieBoss);
             }
         }
 
@@ -384,6 +420,41 @@ to get your fill of zombie fighting action." + "\n");
                 else if (p.HealthPoint <= 0)
                 {
                     Console.WriteLine("ZOMBIE KILLED YOU");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+
+
+            }
+
+
+        }
+
+        public static void FirstFloorMissionCombatBoss()
+        {
+
+            while (true)
+            {
+
+                PrintStatusPlayer();
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.ZombieBossGetDamage();
+                PrintStatusZombieBoss();
+
+                if (m.HPzombieBoss <= 0)
+                {
+                    Console.WriteLine("YOU KILLED A ZOMBIE BOSS");
+                    break;
+                }
+                else if (p.HealthPoint <= 0)
+                {
+                    Console.WriteLine("ZOMBIE BOSS KILLED YOU");
                     break;
                 }
                 else

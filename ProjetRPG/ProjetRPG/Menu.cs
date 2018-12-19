@@ -57,9 +57,8 @@ namespace ProjetRPG
             Console.WriteLine("|+|ZOMBIE NIGHT REDEMPTION|+|");
             Console.WriteLine("MAIN MENU :");
             Console.WriteLine("1. Start New Game");
-            Console.WriteLine("2. Load Game");
-            Console.WriteLine("3. About");
-            Console.WriteLine("4. Exit Game");
+            Console.WriteLine("2. About");
+            Console.WriteLine("3. Exit Game");
             Console.WriteLine("Your choice : ");
         }
 
@@ -91,41 +90,42 @@ namespace ProjetRPG
 
         public static void ChoiceMenu()
         {
-            int choix = AskChoice(1, 4);
+            int choix = AskChoice(1, 3);
             switch (choix)
             {
                 case 1:
                     Game.StartNewGame();
                     break;
                 case 2:
-                    Console.WriteLine("This is load");
+                    Console.WriteLine(@" ______                _     _        _   _ _       _     _    ______         _                      _   _             
+|___  /               | |   (_)      | \ | (_)     | |   | |   | ___ \       | |                    | | (_)            
+   / /  ___  _ __ ___ | |__  _  ___  |  \| |_  __ _| |__ | |_  | |_/ /___  __| | ___ _ __ ___  _ __ | |_ _  ___  _ __  
+  / /  / _ \| '_ ` _ \| '_ \| |/ _ \ | . ` | |/ _` | '_ \| __| |    // _ \/ _` |/ _ \ '_ ` _ \| '_ \| __| |/ _ \| '_ \ 
+./ /__| (_) | | | | | | |_) | |  __/ | |\  | | (_| | | | | |_  | |\ \  __/ (_| |  __/ | | | | | |_) | |_| | (_) | | | |
+\_____/\___/|_| |_| |_|_.__/|_|\___| \_| \_/_|\__, |_| |_|\__| \_| \_\___|\__,_|\___|_| |_| |_| .__/ \__|_|\___/|_| |_|
+                                               __/ |                                          | |                      
+                                              |___/                                           |_|                      
+______                                                                                                                 
+| ___ \                                                                                                                
+| |_/ /_   _                                                                                                           
+| ___ \ | | |                                                                                                          
+| |_/ / |_| |                                                                                                          
+\____/ \__, |                                                                                                          
+        __/ |                                                                                                          
+       |___/                                                                                                           
+  ___  _         _      _ _           _               _   __           _ _                                             
+ / _ \| |       | |    | | |         | |      ___    | | / /          | (_)                                            
+/ /_\ \ |__   __| | ___| | |__   __ _| | __  ( _ )   | |/ /  _____   _| |_ _ __                                        
+|  _  | '_ \ / _` |/ _ \ | '_ \ / _` | |/ /  / _ \/\ |    \ / _ \ \ / / | | '_ \                                       
+| | | | |_) | (_| |  __/ | | | | (_| |   <  | (_>  < | |\  \  __/\ V /| | | | | |                                      
+\_| |_/_.__/ \__,_|\___|_|_| |_|\__,_|_|\_\  \___/\/ \_| \_/\___| \_/ |_|_|_| |_|                                      
+                                                                                    ");
                     break;
                 case 3:
-                    Console.WriteLine("This is Apropos");
-                    break;
-                case 4:
-                    Console.WriteLine("This is quit");
+                    Environment.Exit(0);
                     break;
 
             }
-        }
-
-        public void Load()
-        {
-            Console.WriteLine("Load");
-
-        }
-
-        public void APropos()
-        {
-            Console.WriteLine("APropos");
-
-        }
-
-        public void Quit()
-        {
-            Console.WriteLine("Quit");
-
         }
     }
 }

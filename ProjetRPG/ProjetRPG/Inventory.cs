@@ -54,7 +54,7 @@ namespace ProjetRPG
       (  )    /  / |_________/
       (  )   /  /    | ) |   |
       (__)  /  /     \___|__(
-           /  / BigFoot  )   \
+           /  /          )   \
           /  /            )   \
          /  /              )___\
         /  /
@@ -68,6 +68,24 @@ namespace ProjetRPG
             }
 
             return damageMP5;
+        }
+
+        public static int Sniper()
+        {
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("");
+            Console.WriteLine("You use a Sniper");
+            int damageSniper = 750;
+            Console.WriteLine(@"             _________                      _
+ __------____/    ===  ========================
+ |               ________________/
+ |      ___--_/(_)             ^
+ |___---");
+            Console.WriteLine("");
+            Console.WriteLine("HIT " + damageSniper);
+            
+            return damageSniper;
         }
 
         public static int Heal()
