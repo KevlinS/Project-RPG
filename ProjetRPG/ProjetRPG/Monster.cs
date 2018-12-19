@@ -32,7 +32,7 @@ namespace ProjetRPG
             //HPzombie1 = 500;
             int damageZombie1 = rnd.Next(25);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie1 + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie1 + " !!");
             Console.WriteLine("");
             return damageZombie1;
         }
@@ -42,7 +42,7 @@ namespace ProjetRPG
             
             int damageZombie2 = rnd.Next(25);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie2 + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie2 + " !!");
             Console.WriteLine("");
             return damageZombie2;
         }
@@ -52,7 +52,7 @@ namespace ProjetRPG
 
             int damageZombie3 = rnd.Next(30);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie3 + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie3 + " !!");
             Console.WriteLine("");
             return damageZombie3;
         }
@@ -62,7 +62,7 @@ namespace ProjetRPG
 
             int damageZombie4 = rnd.Next(30);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie4 + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie4 + " !!");
             Console.WriteLine("");
             return damageZombie4;
         }
@@ -72,7 +72,7 @@ namespace ProjetRPG
 
             int damageZombie5 = rnd.Next(30);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie5 + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombie5 + " !!");
             Console.WriteLine("");
             return damageZombie5;
         }
@@ -80,9 +80,9 @@ namespace ProjetRPG
         public static int ZombieBoss()
         {
 
-            int damageZombieBoss = rnd.Next(30, 50);
+            int damageZombieBoss = rnd.Next(30,90);
             Console.WriteLine("");
-            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombieBoss + " !");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombieBoss + " !!");
             Console.WriteLine("");
             return damageZombieBoss;
         }
@@ -182,7 +182,7 @@ namespace ProjetRPG
                 degats = Inventory.Sniper();
                 HPzombie1_2 -= degats;
                 if (HPzombie1_2 <= 0)
-                    Console.WriteLine("ZOMBIE DEAD");
+                    Console.WriteLine("ZOMBIE DEAD ");
 
             }
 
@@ -223,7 +223,7 @@ namespace ProjetRPG
                 degats = Inventory.Handgun();
                 HPzombie1_3 -= degats;
                 if (HPzombie1_3 <= 0)
-                    Console.WriteLine("ZOMBIE DEAD");
+                    Console.WriteLine("ZOMBIE DEAD ");
 
             }
             else if (MyNumber == 2)
@@ -283,7 +283,7 @@ namespace ProjetRPG
                 degats = Inventory.Handgun();
                 HPzombie1_4 -= degats;
                 if (HPzombie1_4 <= 0)
-                    Console.WriteLine("ZOMBIE DEAD");
+                    Console.WriteLine("ZOMBIE DEAD ");
 
             }
             else if (MyNumber == 2)
@@ -343,7 +343,7 @@ namespace ProjetRPG
                 degats = Inventory.Handgun();
                 HPzombie1_5 -= degats;
                 if (HPzombie1_5 <= 0)
-                    Console.WriteLine("ZOMBIE DEAD");
+                    Console.WriteLine("ZOMBIE DEAD ");
 
             }
             else if (MyNumber == 2)
@@ -403,7 +403,7 @@ namespace ProjetRPG
                 degats = Inventory.Handgun();
                 HPzombieBoss -= degats;
                 if (HPzombieBoss <= 0)
-                    Console.WriteLine("ZOMBIE DEAD");
+                    Console.WriteLine("ZOMBIE DEAD ");
 
             }
             else if (MyNumber == 2)
@@ -461,7 +461,7 @@ namespace ProjetRPG
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("It's your turn");
-            Console.WriteLine("Choose your weapon : ");
+            Console.WriteLine("Choose your weapon :");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
             Console.WriteLine("3.Sniper - 1750 GOLD");
@@ -552,7 +552,7 @@ namespace ProjetRPG
             Console.WriteLine("3.Sniper - 1750 GOLD");
             Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
-            Console.WriteLine("Please enter your choice : ");
+            Console.WriteLine("Please enter your choice :");
         }
     }
 
