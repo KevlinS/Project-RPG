@@ -264,7 +264,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromZ1_Z2();
                 PrintStatusPlayer();
                 m.Zombie1GetDamage();
                 PrintStatusZombie1();
@@ -296,7 +296,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromZ1_Z2();
                 PrintStatusPlayer();
                 m.Zombie2GetDamage();
                 PrintStatusZombie1_2();
@@ -331,7 +331,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromZ3_Z4_Z5();
                 PrintStatusPlayer();
                 m.Zombie3GetDamage();
                 PrintStatusZombie1_3();
@@ -366,7 +366,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromZ3_Z4_Z5();
                 PrintStatusPlayer();
                 m.Zombie4GetDamage();
                 PrintStatusZombie1_4();
@@ -401,7 +401,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromZ3_Z4_Z5();
                 PrintStatusPlayer();
                 m.Zombie5GetDamage();
                 PrintStatusZombie1_5();
@@ -436,7 +436,7 @@ to get your fill of zombie fighting action." + "\n");
 
                 PrintStatusPlayer();
                 Menu.ButtonCountinue();
-                p.GetDamage();
+                p.GetDamageFromBoss();
                 PrintStatusPlayer();
                 m.ZombieBossGetDamage();
                 PrintStatusZombieBoss();

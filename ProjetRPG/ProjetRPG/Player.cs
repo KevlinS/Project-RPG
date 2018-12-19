@@ -27,7 +27,7 @@ namespace ProjetRPG
 
         }
 
-        public int GetDamage()
+        public int GetDamageFromZ1_Z2()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             int degats;
@@ -39,6 +39,30 @@ namespace ProjetRPG
             return HealthPoint;
         }
 
-        
+        public int GetDamageFromZ3_Z4_Z5()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            int degats;
+            degats = Monster.Zombie3();
+            HealthPoint -= degats;
+            if (HealthPoint <= 0)
+                Console.WriteLine("PLAYER DEAD");
+
+            return HealthPoint;
+        }
+
+        public int GetDamageFromBoss()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            int degats;
+            degats = Monster.ZombieBoss();
+            HealthPoint -= degats;
+            if (HealthPoint <= 0)
+                Console.WriteLine("PLAYER DEAD");
+
+            return HealthPoint;
+        }
+
+
     }
 }
