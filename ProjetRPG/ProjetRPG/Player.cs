@@ -8,18 +8,15 @@ namespace ProjetRPG
 {
     class Player
     {
-        public string Name;
-        public string Description;
         public int HealthPoint;
-        //public int Money;
-        public Inventory[] Inven;
+        public int Money;
 
+        
 
-
-        public Player(int hp)
+        public Player(int hp, int money)
         {
             HealthPoint = hp;
-            //Money = money;
+            Money = money;
         }
 
         public static string GetNamePlayer()
@@ -42,6 +39,6 @@ namespace ProjetRPG
             return HealthPoint;
         }
 
-
+        
     }
 }

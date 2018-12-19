@@ -8,7 +8,8 @@ namespace ProjetRPG
 {
     class Game 
     {
-        static Player p = new Player(100);
+        static Player p = new Player(100, 5000);
+        static Monster m = new Monster(500, 500, 550, 550, 550);
 
         public Game()
         {
@@ -39,13 +40,21 @@ to get your fill of zombie fighting action." + "\n");
             {
                 case 1:
                     Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("You are in an old building - 1st Floor");
-                    Console.WriteLine("LOCATION : Berlin");
-                    Console.WriteLine("Info : There are five zombies on this floor");
-                    Console.WriteLine("Mission : You have to kill them all and then go up to the second floor");
-                    Menu.ButtonCountinue();
-                    FirstFloorMission();
+                    PrintStatusZombie1();
+                    PrintStatusPlayer();
+                    PrintZombie1Coming();
+                    FirstFloorMissionCombat();
+                    PrintZombie2Coming();
+                    FirstFloorMissionCombat1_2();
+                    PrintZombie3Coming();
+                    FirstFloorMissionCombat1_3();
+                    PrintZombie4Coming();
+                    FirstFloorMissionCombat1_4();
+                    PrintZombie5Coming();
+                    FirstFloorMissionCombat1_5();
+
+
+
                     break;
                 case 2:
                     Environment.Exit(0);
@@ -54,38 +63,188 @@ to get your fill of zombie fighting action." + "\n");
 
 
         }
+        public static int BuyHandgun()
+        {
+            return p.Money -= 500;
+        }
+
+        public static int BuyMP5()
+        {
+            return p.Money -= 1000;
+        }
+
+        public static int BuyHeal()
+        {
+            return p.Money -= 1000;
+        }
+
+
+
+        public static int GetHealPlayer()
+        {
+            int AddHeal;
+            Console.ForegroundColor = ConsoleColor.Green;
+            
+            AddHeal = Inventory.Heal();
+            p.HealthPoint += AddHeal;
+
+            if(p.HealthPoint > 100)
+            {
+                p.HealthPoint = 100;
+            }
+
+            return p.HealthPoint;
+
+        }
+
+        public static void PrintZombie1Coming()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("FIRST ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
+        }
+
+        public static void PrintZombie2Coming()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("SECOND ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
+        }
+
+        public static void PrintZombie3Coming()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("THIRD ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
+        }
+
+        public static void PrintZombie4Coming()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("FOURTH ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
+        }
+
+        public static void PrintZombie5Coming()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("FIFTH ZOMBIE IS COMING AND WANT TO EAT YOU!!!");
+        }
 
         public static void PrintStatusPlayer()
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("YOUR HP:" + p.HealthPoint);
+            if (p.HealthPoint <= 0 || p.Money < 500)
+            {
+
+                p.HealthPoint = 100;
+                p.Money = 5000;
+                Console.WriteLine("YOU CAN'T SURVIVE, GAME OVER!!!");
+                Menu.PrintWelcomeText();
+                Menu.PrintMenu();
+                Menu.ChoiceMenu();
+
+            }
+            else
+            {
+                Console.WriteLine("YOUR HP:" + p.HealthPoint + " YOUR GOLD:" + p.Money);
+            }
+            
         }
 
-        public void Deplacement()
+        public static void PrintStatusZombie1()
         {
-            //PrintChoix();
-            int choix = Menu.AskChoice(0, 4);
-            //TODO Récuperer la case
-            //TODO Tester le contenu de la case
-            //TODO peut etre lancer un combat
-        }
-
-        public static void FirstFloorMission()
-        {
-            PrintStatusPlayer();
             Console.ForegroundColor = ConsoleColor.Red;
-            p.GetDamage();
+            if(m.HPzombie1 <= 0)
+            {
+                Console.WriteLine("FIRST ZOMBIE HAS GONE");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombie1);
+            }
+        }
+
+        public static void PrintStatusZombie1_2()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (m.HPzombie1_2 <= 0)
+            {
+                Console.WriteLine("SECOND ZOMBIE HAS GONE");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombie1_2);
+            }
+        }
+
+        public static void PrintStatusZombie1_3()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (m.HPzombie1_3 <= 0)
+            {
+                Console.WriteLine("THIRD ZOMBIE HAS GONE");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombie1_3);
+            }
+        }
+
+        public static void PrintStatusZombie1_4()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (m.HPzombie1_4 <= 0)
+            {
+                Console.WriteLine("FOURTH ZOMBIE HAS GONE");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombie1_4);
+            }
+        }
+
+        public static void PrintStatusZombie1_5()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (m.HPzombie1_5 <= 0)
+            {
+                Console.WriteLine("FIFTH ZOMBIE HAS GONE");
+            }
+            else
+            {
+                Console.WriteLine("HP ZOMBIE:" + m.HPzombie1_5);
+            }
+        }
+
+        public static void FirstFloorMissionCombat()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("You are in an old building - 1st Floor");
+            Console.WriteLine("LOCATION : Berlin");
+            Console.WriteLine("Info : There are five zombies on this floor");
+            Console.WriteLine("Mission : You have to kill them all and then go up to the second floor");
+            Console.WriteLine();
+            Console.WriteLine("START COMBAT!!!");
+            Menu.ButtonCountinue();
+            
+
             while (true)
             {
-                Menu.ButtonCountinue();
+
                 PrintStatusPlayer();
-                Monster.Zombie1GetDamage();
-                if(Monster.HPzombie1 <= 0 )
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.Zombie1GetDamage();
+                PrintStatusZombie1();
+
+                if (m.HPzombie1 <= 0)
                 {
                     Console.WriteLine("YOU KILLED A ZOMBIE");
                     break;
                 }
-                else if(p.HealthPoint <= 0)
+                else if (p.HealthPoint <= 0)
                 {
                     Console.WriteLine("ZOMBIE KILLED YOU");
                     break;
@@ -94,7 +253,149 @@ to get your fill of zombie fighting action." + "\n");
                 {
                     continue;
                 }
+
             }
+
+        }
+
+        public static void FirstFloorMissionCombat1_2()
+        {
+           
+            while (true)
+            {
+
+                PrintStatusPlayer();
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.Zombie2GetDamage();
+                PrintStatusZombie1_2();
+
+                if (m.HPzombie1_2 <= 0)
+                {
+                    Console.WriteLine("YOU KILLED A ZOMBIE");
+                    break;
+                }
+                else if (p.HealthPoint <= 0)
+                {
+                    Console.WriteLine("ZOMBIE KILLED YOU");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+
+
+            }
+
+
+        }
+
+        public static void FirstFloorMissionCombat1_3()
+        {
+
+            while (true)
+            {
+
+                PrintStatusPlayer();
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.Zombie3GetDamage();
+                PrintStatusZombie1_3();
+
+                if (m.HPzombie1_3 <= 0)
+                {
+                    Console.WriteLine("YOU KILLED A ZOMBIE");
+                    break;
+                }
+                else if (p.HealthPoint <= 0)
+                {
+                    Console.WriteLine("ZOMBIE KILLED YOU");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+
+
+            }
+
+
+        }
+
+        public static void FirstFloorMissionCombat1_4()
+        {
+
+            while (true)
+            {
+
+                PrintStatusPlayer();
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.Zombie4GetDamage();
+                PrintStatusZombie1_4();
+
+                if (m.HPzombie1_4 <= 0)
+                {
+                    Console.WriteLine("YOU KILLED A ZOMBIE");
+                    break;
+                }
+                else if (p.HealthPoint <= 0)
+                {
+                    Console.WriteLine("ZOMBIE KILLED YOU");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+
+
+            }
+
+
+        }
+
+        public static void FirstFloorMissionCombat1_5()
+        {
+
+            while (true)
+            {
+
+                PrintStatusPlayer();
+                Menu.ButtonCountinue();
+                p.GetDamage();
+                PrintStatusPlayer();
+                m.Zombie5GetDamage();
+                PrintStatusZombie1_5();
+
+                if (m.HPzombie1_5 <= 0)
+                {
+                    Console.WriteLine("YOU KILLED A ZOMBIE");
+                    break;
+                }
+                else if (p.HealthPoint <= 0)
+                {
+                    Console.WriteLine("ZOMBIE KILLED YOU");
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+
+
+            }
+
+
         }
     }
 }

@@ -69,6 +69,29 @@ namespace ProjetRPG
 
             return damageMP5;
         }
+
+        public static int Heal()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("You use a Heal");
+            int soin = 100;
+            Console.WriteLine(@"   `.___,'
+      (___)
+      <   >
+       ) (
+      /`-.\
+     /     \
+    / _    _\
+   :,' `-.' `:
+   |         |
+   :         ;
+    \       /
+     `.___.' ");
+            Console.WriteLine("");
+            Console.WriteLine("Heal " + soin);
+            return soin;
+        }
     }
     
 }
