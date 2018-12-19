@@ -14,15 +14,17 @@ namespace ProjetRPG
         public int HPzombie1_3;
         public int HPzombie1_4;
         public int HPzombie1_5;
+        public int HPzombieBoss;
         static Random rnd = new Random();
 
-        public Monster(int hpZ1, int hpZ2, int hpZ3, int hpZ4, int hpZ5)
+        public Monster(int hpZ1, int hpZ2, int hpZ3, int hpZ4, int hpZ5, int hpZBOSS)
         {
             HPzombie1 = hpZ1;
             HPzombie1_2 = hpZ2;
             HPzombie1_3 = hpZ3;
             HPzombie1_4 = hpZ4;
             HPzombie1_5 = hpZ5;
+            HPzombieBoss = hpZBOSS;
         }
 
         public static int Zombie1()
@@ -75,6 +77,16 @@ namespace ProjetRPG
             return damageZombie5;
         }
 
+        public static int ZombieBoss()
+        {
+
+            int damageZombieBoss = rnd.Next(30, 50);
+            Console.WriteLine("");
+            Console.WriteLine("Zombie hits you, BLOOD -" + damageZombieBoss + " !");
+            Console.WriteLine("");
+            return damageZombieBoss;
+        }
+
 
 
         public int Zombie1GetDamage()
@@ -106,6 +118,16 @@ namespace ProjetRPG
 
             else if (MyNumber == 3)
             {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombie1 -= degats;
+                if (HPzombie1 <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
                 Game.BuyHeal();
                 Game.GetHealPlayer();
             }
@@ -119,10 +141,10 @@ namespace ProjetRPG
 
             else
             {
-                Console.WriteLine("You didn't pick the weapon");
+                Console.WriteLine("You didn't choose anything");
             }
 
-             Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;
                 //Console.WriteLine("HP ZOMBIE : " + HPzombie1);
             return HPzombie1;
         }
@@ -156,6 +178,16 @@ namespace ProjetRPG
 
             else if (MyNumber == 3)
             {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombie1_2 -= degats;
+                if (HPzombie1_2 <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
                 Game.BuyHeal();
                 Game.GetHealPlayer();
             }
@@ -169,7 +201,7 @@ namespace ProjetRPG
 
             else
             {
-                Console.WriteLine("You didn't pick the weapon");
+                Console.WriteLine("You didn't choose anything");
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -206,6 +238,16 @@ namespace ProjetRPG
 
             else if (MyNumber == 3)
             {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombie1_3 -= degats;
+                if (HPzombie1_3 <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
                 Game.BuyHeal();
                 Game.GetHealPlayer();
             }
@@ -219,7 +261,7 @@ namespace ProjetRPG
 
             else
             {
-                Console.WriteLine("You didn't pick the weapon");
+                Console.WriteLine("You didn't choose anything");
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -256,6 +298,16 @@ namespace ProjetRPG
 
             else if (MyNumber == 3)
             {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombie1_4 -= degats;
+                if (HPzombie1_4 <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
                 Game.BuyHeal();
                 Game.GetHealPlayer();
             }
@@ -269,7 +321,7 @@ namespace ProjetRPG
 
             else
             {
-                Console.WriteLine("You didn't pick the weapon");
+                Console.WriteLine("You didn't choose anything");
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -306,6 +358,16 @@ namespace ProjetRPG
 
             else if (MyNumber == 3)
             {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombie1_5 -= degats;
+                if (HPzombie1_5 <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
                 Game.BuyHeal();
                 Game.GetHealPlayer();
             }
@@ -319,7 +381,7 @@ namespace ProjetRPG
 
             else
             {
-                Console.WriteLine("You didn't pick the weapon");
+                Console.WriteLine("You didn't choose anything");
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -327,6 +389,65 @@ namespace ProjetRPG
             return HPzombie1_5;
         }
 
+        public int ZombieBossGetDamage()
+        {
+
+            int degats;
+
+
+            PrintChoiceZombieBossGD();
+            int MyNumber = int.Parse(Console.ReadLine());
+            if (MyNumber == 1)
+            {
+                Game.BuyHandgun();
+                degats = Inventory.Handgun();
+                HPzombieBoss -= degats;
+                if (HPzombieBoss <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+            else if (MyNumber == 2)
+            {
+                Game.BuyMP5();
+                degats = Inventory.MP5();
+                HPzombieBoss -= degats;
+                if (HPzombieBoss <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 3)
+            {
+                Game.BuySniper();
+                degats = Inventory.Sniper();
+                HPzombieBoss -= degats;
+                if (HPzombieBoss <= 0)
+                    Console.WriteLine("ZOMBIE DEAD");
+
+            }
+
+            else if (MyNumber == 4)
+            {
+                Game.BuyHeal();
+                Game.GetHealPlayer();
+            }
+
+
+            else if (MyNumber == 0)
+            {
+                Environment.Exit(0);
+            }
+
+
+            else
+            {
+                Console.WriteLine("You didn't choose anything");
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            return HPzombieBoss;
+        }
 
 
 
@@ -343,7 +464,8 @@ namespace ProjetRPG
             Console.WriteLine("Choose your weapon : ");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
-            Console.WriteLine("3.Heal - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
             Console.WriteLine("Please enter your choice : ");
         }
@@ -359,7 +481,8 @@ namespace ProjetRPG
             Console.WriteLine("Choose your weapon : ");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
-            Console.WriteLine("3.Heal - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
             Console.WriteLine("Please enter your choice : ");
         }
@@ -375,7 +498,8 @@ namespace ProjetRPG
             Console.WriteLine("Choose your weapon : ");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
-            Console.WriteLine("3.Heal - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
             Console.WriteLine("Please enter your choice : ");
         }
@@ -391,7 +515,8 @@ namespace ProjetRPG
             Console.WriteLine("Choose your weapon : ");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
-            Console.WriteLine("3.Heal - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
             Console.WriteLine("Please enter your choice : ");
         }
@@ -407,7 +532,25 @@ namespace ProjetRPG
             Console.WriteLine("Choose your weapon : ");
             Console.WriteLine("1.Handgun - 500 GOLD");
             Console.WriteLine("2.MP5 - 1000 GOLD");
-            Console.WriteLine("3.Heal - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
+            Console.WriteLine("0.Quit Game");
+            Console.WriteLine("Please enter your choice : ");
+        }
+
+        public void PrintChoiceZombieBossGD()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("");
+            Console.WriteLine("HP ZOMBIE : " + HPzombieBoss);
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("It's your turn");
+            Console.WriteLine("Choose your weapon : ");
+            Console.WriteLine("1.Handgun - 500 GOLD");
+            Console.WriteLine("2.MP5 - 1000 GOLD");
+            Console.WriteLine("3.Sniper - 1750 GOLD");
+            Console.WriteLine("4.Heal - 1000 GOLD");
             Console.WriteLine("0.Quit Game");
             Console.WriteLine("Please enter your choice : ");
         }
