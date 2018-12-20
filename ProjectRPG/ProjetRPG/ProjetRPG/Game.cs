@@ -242,6 +242,7 @@ to get your fill of zombie fighting action." + "\n");
                 p.Money += 10000;
                 Console.WriteLine("===== ALL ZOMBIES DEAD =====");
                 Console.WriteLine("===== MISSION SUCCESS - STAGE 1 COMPLETED =====");
+                
             }
             else
             {
@@ -445,7 +446,50 @@ to get your fill of zombie fighting action." + "\n");
 
                 if (m.HPzombieBoss <= 0)
                 {
-                    Console.WriteLine("YOU KILLED A ZOMBIE BOSS");
+                    Console.WriteLine("YOU KILLED A ZOMBIE BOSS\n");
+                    Console.WriteLine(@"                                               
+        GGGGGGGGGGGGG             GGGGGGGGGGGGG
+     GGG::::::::::::G          GGG::::::::::::G
+   GG:::::::::::::::G        GG:::::::::::::::G
+  G:::::GGGGGGGG::::G       G:::::GGGGGGGG::::G
+ G:::::G       GGGGGG      G:::::G       GGGGGG
+G:::::G                   G:::::G              
+G:::::G                   G:::::G              
+G:::::G    GGGGGGGGGG     G:::::G    GGGGGGGGGG
+G:::::G    G::::::::G     G:::::G    G::::::::G
+G:::::G    GGGGG::::G     G:::::G    GGGGG::::G
+G:::::G        G::::G     G:::::G        G::::G
+ G:::::G       G::::G      G:::::G       G::::G
+  G:::::GGGGGGGG::::G       G:::::GGGGGGGG::::G
+   GG:::::::::::::::G        GG:::::::::::::::G
+     GGG::::::GGG:::G          GGG::::::GGG:::G
+        GGGGGG   GGGG             GGGGGG   GGGG");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    Console.WriteLine(@" ______                _     _        _   _ _       _     _    ______         _                      _   _             
+|___  /               | |   (_)      | \ | (_)     | |   | |   | ___ \       | |                    | | (_)            
+   / /  ___  _ __ ___ | |__  _  ___  |  \| |_  __ _| |__ | |_  | |_/ /___  __| | ___ _ __ ___  _ __ | |_ _  ___  _ __  
+  / /  / _ \| '_ ` _ \| '_ \| |/ _ \ | . ` | |/ _` | '_ \| __| |    // _ \/ _` |/ _ \ '_ ` _ \| '_ \| __| |/ _ \| '_ \ 
+./ /__| (_) | | | | | | |_) | |  __/ | |\  | | (_| | | | | |_  | |\ \  __/ (_| |  __/ | | | | | |_) | |_| | (_) | | | |
+\_____/\___/|_| |_| |_|_.__/|_|\___| \_| \_/_|\__, |_| |_|\__| \_| \_\___|\__,_|\___|_| |_| |_| .__/ \__|_|\___/|_| |_|
+                                               __/ |                                          | |                      
+                                              |___/                                           |_|                      
+______                                                                                                                 
+| ___ \                                                                                                                
+| |_/ /_   _                                                                                                           
+| ___ \ | | |                                                                                                          
+| |_/ / |_| |                                                                                                          
+\____/ \__, |                                                                                                          
+        __/ |                                                                                                          
+       |___/                                                                                                           
+  ___  _         _      _ _           _               _   __           _ _                                             
+ / _ \| |       | |    | | |         | |      ___    | | / /          | (_)                                            
+/ /_\ \ |__   __| | ___| | |__   __ _| | __  ( _ )   | |/ /  _____   _| |_ _ __                                        
+|  _  | '_ \ / _` |/ _ \ | '_ \ / _` | |/ /  / _ \/\ |    \ / _ \ \ / / | | '_ \                                       
+| | | | |_) | (_| |  __/ | | | | (_| |   <  | (_>  < | |\  \  __/\ V /| | | | | |                                      
+\_| |_/_.__/ \__,_|\___|_|_| |_|\__,_|_|\_\  \___/\/ \_| \_/\___| \_/ |_|_|_| |_|                                      
+                                                                                    ");
+                    Thread.Sleep(3000);
                     break;
                 }
                 else if (p.HealthPoint <= 0)

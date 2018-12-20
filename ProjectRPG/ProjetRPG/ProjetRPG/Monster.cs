@@ -80,7 +80,7 @@ namespace ProjetRPG
         public static int ZombieBoss()
         {
 
-            int damageZombieBoss = rnd.Next(30,50);
+            int damageZombieBoss = rnd.Next(40);
             Console.WriteLine("");
             Console.WriteLine("Zombie hits you, BLOOD -" + damageZombieBoss + " !!");
             Console.WriteLine("");
